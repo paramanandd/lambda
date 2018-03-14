@@ -12,7 +12,7 @@ def lambda_handler(event, context):
     #print("Received event: " + json.dumps(event, indent=2))
     message = event['Records'][0]['Sns']['Message']
     print("From SNS: " + message)
-    instanceId = 'i-04abda8a48008dca8'
+    instanceId = 'i-0c36023fe79064a5f'
     if (message=='start') :
         ssmClient = boto3.client('ssm')
         ssmCommand = ssmClient.send_command(
